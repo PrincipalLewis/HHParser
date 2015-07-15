@@ -1,0 +1,8 @@
+*.iml
+*.log
+.gitignore
+.project
+.idea/
+.cookieFunction.js
+.script.js
+node_modules/
