@@ -3,3 +3,4 @@ hh/hh.js
 hh/client.js
 hh/response.js
 hh/status-code.js
+hh/auth.js
