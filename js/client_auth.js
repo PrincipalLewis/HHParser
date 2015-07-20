@@ -9,8 +9,10 @@ if (code[0] === '?code') {
     success: function(msg) {
       console.log(msg);
       var obj = JSON.parse(msg);
-      document.getElementById('1').innerHTML = '';
-      document.getElementById('1').innerHTML = msg;
+      localStorage.setItem('access_token', obj.access_token);
+      localStorage.setItem('expires_in', obj.expires_in);
+      localStorage.setItem('refresh_token', obj.refresh_token);
+
       window.location.replace('http://hr.livetex.ru');
     },
     error: function(msg) {

@@ -13,8 +13,13 @@
 <br>
 <form >
     <div>
-        Тыкай кнопки
+        Введите слово или фразу как параметр поиска на сайте HeadHunter
     </div>
+</form>
+<div>
+    <button onclick="addForm()" type="button" class="btn btn-default">Добавить параметр поиска</button>
+</div>
+<form class="form-inline" role="form" id="form">
 </form>
 <form>
     <div class="btn-group">
@@ -22,14 +27,16 @@
         <button onclick="getOneResume()" type="button" class="btn btn-default">getResumeVadima</button>
         <button onclick="me()" type="button" class="btn btn-default">Me</button>
         <button onclick="getResumes()" type="button" class="btn btn-default">getResumes</button>
+        <button onclick="getLocalStorage()" type="button" class="btn btn-default">getLocalStorage</button>
     </div>
 </form>
 <form>
-    <div id="1">
+    <div id="test">
     </div>
 </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="lib/hh/client.js"></script>
+<!--<script src="test.js"></script>-->
 </body>
 </html>
