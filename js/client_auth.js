@@ -11,6 +11,7 @@ if (code[0] === '?code') {
       var obj = JSON.parse(msg);
       document.getElementById('1').innerHTML = '';
       document.getElementById('1').innerHTML = msg;
+      window.location.replace('http://hr.livetex.ru');
     },
     error: function(msg) {
       document.getElementById('body').innerHTML =
@@ -19,4 +20,3 @@ if (code[0] === '?code') {
     }
   });
 }
-console.log(code[1]);

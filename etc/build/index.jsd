@@ -4,3 +4,4 @@ hh/client.js
 hh/response.js
 hh/status-code.js
 hh/auth.js
+hh/db.js
