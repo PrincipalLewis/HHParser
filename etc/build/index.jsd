@@ -1,7 +1,7 @@
 hh/server.js
 hh/hh.js
-hh/client.js
 hh/response.js
 hh/status-code.js
 hh/auth.js
 hh/db.js
+hh/errors.js
