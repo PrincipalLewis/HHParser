@@ -1,22 +1,26 @@
 function getResumes() {
-  var position = '&text=' + document.getElementById('text').value +
-                 '&text.logic=all&text.field=title&text.period=all_time' +
-      '&text=' + document.getElementById('text').value + '&text.logic=all&text.field=experience_position&text.period=last_three_years';
+  var position = document.getElementById('text').value.trim();
+  position = position.replace(/,/gi, '%20');
+  position = '&text=' + document.getElementById('text').value +
+      '&text.logic=any&text.field=title&text.period=all_time' +
+      '&text=' + document.getElementById('text').value + '&text.logic=any' +
+      '&text.field=experience_position&text.period=last_three_years';
 
   var url = document.getElementById('text1').value.trim();
   url = url.replace(/,/gi, '%20');
-  url = '&text=' + url + '&text.logic=any&text.field=everywhere&text.period=all_time';
-  console.log(url);
+  url = '&text=' + url + '&text.logic=any&text.field=everywhere' +
+        '&text.period=all_time';
   $.ajax({
     type: 'post',
     url: 'http://localhost:1337/resumes?area=2' + position + url,
-
     data: localStorage.getItem('access_token'),
     success: function(msg) {
-      var obj = JSON.parse(msg);
-      console.log(obj);
       document.getElementById('test').innerHTML = '';
-      document.getElementById('test').innerHTML = msg;
+      var obj = JSON.parse(msg);
+      for (var i in obj) {
+        document.getElementById('test').innerHTML += JSON.stringify(obj[i]) +
+                '<br>';
+      }
     },
     error: function(msg) {
       document.getElementById('body').innerHTML =
@@ -100,17 +104,6 @@ function getLocalStorage() {
   console.log(localStorage.getItem('refresh_token'));
 }
 var count = 1;
-function addForm() {
-  for (var i = 1; i <= count; i++) {
-/*    document.getElementById('text' + i).innerHTML;*/
-  }
-  document.getElementById('form').innerHTML +=
-      '<div class="form-group">' +
-      '<label class="sr-only" for="text' + count + '">Text</label>' +
-      '<input type="text" class="form-control" id="text' + count++ + '"' +
-      ' placeholder="Параметр поиска">' +
-      '</div>';
-}
 
 function saveData() {
   var data = document.getElementById('test').innerHTML;
@@ -154,7 +147,7 @@ function convertToCSV(objArray) {
   for (var i = 0; i < array.length; i++) {
     var line = '';
     for (var index in array[i]) {
-      if (line != '') line += ','
+      if (line != '') line += ',';
 
       line += array[i][index];
     }
@@ -201,8 +194,8 @@ function myAreas() {
     },
     error: function(msg) {
       document.getElementById('body').innerHTML =
-        '' + msg.status + ' ' + msg.statusText + '<br>' +
-        msg.responseText;
+          '' + msg.status + ' ' + msg.statusText + '<br>' +
+          msg.responseText;
     }
   });
 }

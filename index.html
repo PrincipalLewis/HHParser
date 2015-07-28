@@ -1,6 +1,6 @@
 <html>
 <HEAD>
-    <TITLE>surprise mazafaka</TITLE>
+    <TITLE>HH</TITLE>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <meta charset="UTF-8">
 </HEAD>
@@ -11,7 +11,7 @@
 <br>
 <br>
 <div>
-    Введите должность.
+    Перечислите через запятую должности.
 </div>
 <form role="form">
     <div class="form-group">
@@ -27,21 +27,25 @@
         <label class="sr-only" for="text1">Text</label>
         <input type="text" class="form-control" id="text1" placeholder="Параметр поиска">
     </div>
-<form>
+</form>
+<div>
+    Каждый запрос перезаписывает старый
+</div>
+<form class="form-inline" role="form">
     <div class="btn-group">
+        <button onclick="getResumes()" type="button" class="btn btn-default">Получить резюме</button>
         <button onclick="me()" type="button" class="btn btn-default">Me</button>
-        <button onclick="getResumes()" type="button" class="btn btn-default">getResumes</button>
-        <button onclick="getLocalStorage()" type="button" class="btn btn-default">getLocalStorage</button>
-        <button onclick="deleteLocalStorage()" type="button" class="btn btn-default">deleteLocalStorage</button>
-        <button onclick="saveData()" type="button" class="btn btn-default">Сохранить данные</button>
-        <button onclick="downloadFile()" type="button" class="btn btn-default">Скачать файл</button>
-        <button onclick="convert()" type="button" class="btn btn-default">Скачать файл</button>
-        <button onclick="getMyResumes()" type="button" class="btn btn-default">getMyResumes</button>
-        <button onclick="myAreas()" type="button" class="btn btn-default">areas</button>
+        <!--<button onclick="getLocalStorage()" type="button" class="btn btn-default">getLocalStorage</button>-->
+        <!--<button onclick="deleteLocalStorage()" type="button" class="btn btn-default">deleteLocalStorage</button>-->
+        <!--<button onclick="saveData()" type="button" class="btn btn-default">Сохранить данные</button>-->
+        <!--<button onclick="downloadFile()" type="button" class="btn btn-default">Скачать файл</button>-->
+        <!--<button onclick="convert()" type="button" class="btn btn-default">Скачать файл</button>-->
+        <!--<button onclick="getMyResumes()" type="button" class="btn btn-default">getMyResumes</button>-->
+        <!--<button onclick="myAreas()" type="button" class="btn btn-default">areas</button>-->
 
     </div>
-    <div>
-        <a href="http://hr.livetex.ru/message.txt" download="message.txt">Скачать файл</a>
+    <div class="btn-group">
+        <a href="http://hr.livetex.ru/message.txt" download="message.csv">Скачать файл</a>
     </div>
 </form>
 <form>
