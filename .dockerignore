@@ -1,6 +1,7 @@
 *.iml
 *.log
 .gitignore
+.npmignore
 .project
 .idea/
 message.txt
